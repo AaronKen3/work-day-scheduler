@@ -19,17 +19,22 @@ $(function () {
     $(this).removeClass("past");
     $(this).removeClass("present");
     let hour = parseInt($(this).attr("id").split("-")[1]);
+console.log(hour)
 
     if (hour > dayjs().hour()) {
       $(this).addClass("future");
     } else if (hour === dayjs().hour()) {
       $(this).addClass("present");
     } else {
-      $(this.addClass("past"));
+      $(this).addClass("past");
     }
   });
 
   $("#hour-9").children(".description").val(localStorage.getItem("hour-9"));
+  $("#hour-10").children(".description").val(localStorage.getItem("hour-10"));
+  $("#hour-11").children(".description").val(localStorage.getItem("hour-11"));
+
+
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
